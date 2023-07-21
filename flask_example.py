@@ -18,12 +18,10 @@ def greenhouse():
     # Connect to sqlite db
     # grab data from db
     # generate plotly graph
-    # export plotly graph to javascript
 
     df = px.data.iris()
     fig = px.scatter(df, x="sepal_width", y="sepal_length", color="species",
                      size='petal_length', hover_data=['petal_width'])
-    # fig.show()
     fig_json = dumps(fig, cls=utils.PlotlyJSONEncoder)
 
     return render_template('greenhouse.html', graph_JSON=fig_json)
