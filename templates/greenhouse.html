@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <h1>Greenhouse Project</h1>
+      <h3><a href="../">Back to Homepage</a>
+      <h2>Temperature Plot</h2>
+      <!-- scatter plot goes in this div -->
+      <div id='temperature-graph'></div>
+    </main>
+    <footer>
+      <script type="text/javascript">
+
+        // here is where the JSON gets plugged in via JS
+        var temperature_graph = {{graph_JSON | safe}};
+
+        // you target the graph div id in the first arg, 
+        // put your graph in the second, and set the third as {}
+        Plotly.plot("temperature-graph", temperature_graph, {});
+
+      </script>
+    </footer>
+  </body>
+
+</html>
